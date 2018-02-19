@@ -1,5 +1,7 @@
 package com.zipcodewilmington.assessment1.part1;
 
+import static java.lang.Integer.reverse;
+
 /**
  * Created by leon on 2/16/18.
  */
@@ -11,7 +13,13 @@ public class IntegerUtils {
      * @return the sum of all integers between 0 and not including `n`
      */
     public static Integer getSumOfN(Integer n) {
-        return null;
+        int counter = 0;
+        int x = 0;
+        while(counter <= n) {
+            x += counter;
+            counter++;
+        }
+        return x;
     }
 
     /**
@@ -19,7 +27,14 @@ public class IntegerUtils {
      * @return the product of all integers between 0 and not including `n`
      */
     public static Integer getProductOfN(Integer n) {
-        return null;
+        int counter = 1;
+        int x = 1;
+        while(counter <= n) {
+            x *= counter;
+            counter++;
+        }
+        return x;
+
     }
 
     /**
@@ -27,6 +42,12 @@ public class IntegerUtils {
      * @return integer with identical digits in the reverse order
      */
     public static Integer reverseDigits(Integer val) {
-        return null;
+        String first = val.toString();
+        String reverse = "";
+        for (int i = first.length() - 1; i >= 0; i--) {
+            reverse += first.charAt(i);
+        }
+        Integer reversed = Integer.parseInt(reverse);
+        return reversed;
     }
 }

@@ -1,5 +1,8 @@
 package com.zipcodewilmington.assessment1.part2;
 
+import java.sql.Array;
+import java.util.TreeMap;
+
 /**
  * Created by leon on 2/16/18.
  */
@@ -11,7 +14,12 @@ public class ArrayUtils {
      * Given an array of objects, named `objectArray`, and an object `objectToCount`, return the number of times the `objectToCount` appears in the `objectArray`
      */
     public static Integer getNumberOfOccurrences(Object[] objectArray, Object objectToCount) {
-        return null;
+        Integer counter = 0;
+        for(int i = 0; i< objectArray.length; i++) {
+            if(objectArray[i].equals(objectToCount))
+                counter++;
+        }
+        return counter;
     }
 
     /**
@@ -21,7 +29,22 @@ public class ArrayUtils {
      * Given an array of objects, name `objectArray`, and an object `objectToRemove`, return an array of objects with identical contents excluding `objectToRemove`
      */
     public static Object[] removeValue(Object[] objectArray, Object objectToRemove) {
-        return null;
+        Object [] output = {};
+        StringBuilder removeObject = new StringBuilder();
+        for(int i = 0; i<objectArray.length; i++) {
+            if (!objectArray[i].equals(objectToRemove)) {
+                removeObject.append(objectArray[i])
+                        .append("/");
+            }
+        }
+        String remove = removeObject.toString();
+        String[] removedValues = remove.split("/");
+
+        Integer[] exactIntRemoved = new Integer [removedValues.length];
+        for(int i = 0; i<removedValues.length; i++) {
+            exactIntRemoved[i] = Integer.parseInt(removedValues[i]);
+        }
+        return exactIntRemoved;
     }
 
     /**
@@ -30,6 +53,11 @@ public class ArrayUtils {
      * given an array of objects, named `objectArray` return the most frequently occuring object in the array
      */
     public static Object getMostCommon(Object[] objectArray) {
+
+        for(int i = 0; i<objectArray.length; i++) {
+
+        }
+
         return null;
     }
 

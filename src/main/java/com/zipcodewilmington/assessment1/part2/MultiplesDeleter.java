@@ -10,7 +10,22 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with evens removed
      */
     public Integer[] deleteEvens(Integer[] ints) {
-        return null;
+        StringBuilder holder = new StringBuilder();
+        for(int i = 0; i<ints.length; i++) {
+            int it = ints[i];
+            if((it%2) != 0){
+                holder.append(ints[i])
+                        .append("/");
+            }
+        }
+        String stepTwo = holder.toString();
+        String[] stepThree = stepTwo.split("/");
+        Integer[] evenIntRemoved = new Integer [stepThree.length];
+        for(int i = 0; i<stepThree.length; i++) {
+            evenIntRemoved[i] = Integer.parseInt(stepThree[i]);
+        }
+
+        return evenIntRemoved;
     }
 
     /**
@@ -19,7 +34,23 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with odds removed
      */
     public Integer[] deleteOdds(Integer[] ints) {
-        return null;
+        StringBuilder holder = new StringBuilder();
+        for(int i = 0; i<ints.length; i++) {
+            int it = ints[i];
+            if((it%2) == 0){
+                holder.append(ints[i])
+                        .append("/");
+            }
+        }
+        String stepTwo = holder.toString();
+        String[] stepThree = stepTwo.split("/");
+        Integer[] oddIntRemoved = new Integer [stepThree.length];
+        for(int i = 0; i<stepThree.length; i++) {
+            oddIntRemoved[i] = Integer.parseInt(stepThree[i]);
+        }
+
+        return oddIntRemoved;
+
     }
 
     /**
@@ -28,7 +59,23 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with numbers indivisible by 3 removed
      */
     public Integer[] deleteMultiplesOf3(Integer[] ints) {
-        return null;
+        StringBuilder holder = new StringBuilder();
+        for(int i = 0; i<ints.length; i++) {
+            int it = ints[i];
+            if((it%3) != 0){
+                holder.append(ints[i])
+                        .append("/");
+            }
+        }
+        String stepTwo = holder.toString();
+        String[] stepThree = stepTwo.split("/");
+        Integer[] thirdIntRemoved = new Integer [stepThree.length];
+        for(int i = 0; i<stepThree.length; i++) {
+            thirdIntRemoved[i] = Integer.parseInt(stepThree[i]);
+        }
+
+        return thirdIntRemoved;
+
     }
 
     /**
@@ -38,6 +85,21 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with numbers indivisible by `multiple` removed
      */
     public Integer[] deleteMultiplesOfN(Integer[] ints, int multiple) {
-        return null;
+        StringBuilder holder = new StringBuilder();
+        for(int i = 0; i<ints.length; i++) {
+            int it = ints[i];
+            if((it%multiple) != 0){
+                holder.append(ints[i])
+                        .append("/");
+            }
+        }
+        String stepTwo = holder.toString();
+        String[] stepThree = stepTwo.split("/");
+        Integer[] multipleIntRemoved = new Integer [stepThree.length];
+        for(int i = 0; i<stepThree.length; i++) {
+            multipleIntRemoved[i] = Integer.parseInt(stepThree[i]);
+        }
+
+        return multipleIntRemoved;
     }
 }

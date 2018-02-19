@@ -8,7 +8,13 @@ public class Cat extends Pet {
      * @param name name of this Cat
      * @param age age of this Cat
      */
+    private String name;
+    private Integer age;
+    private PetOwner owner;
+
     public Cat(String name, Integer age) {
+        this.name = name;
+        this.age = age;
 
     }
 
@@ -16,13 +22,16 @@ public class Cat extends Pet {
      * @param age age of this Cat
      */
     public Cat(Integer age) {
+        this.name = "Cat name";
+        this.age = age;
     }
 
     /**
      * @param name name of this Cat
      */
     public Cat(String name) {
-
+        this.name = name;
+        this.age = 0;
     }
 
     /**
@@ -32,12 +41,35 @@ public class Cat extends Pet {
      * age is 0
      */
     public Cat() {
+        this.name = "Cat name";
+        this.age = 0;
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public Integer getAge() {
+        return age;
+    }
+
+    @Override
+    public void setOwner(PetOwner newPetOwner) {
+        super.setOwner(newPetOwner);
+    }
+
+    @Override
+    public PetOwner getOwner() {
+        return super.getOwner();
     }
 
     /**
      * @return meow as a string
      */
     public String speak() {
-        return null;
+
+        return "Meow";
     }
 }

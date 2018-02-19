@@ -13,7 +13,15 @@ public class RockPaperSissorsEvaluator {
      * @return the respective winning move
      */
     public String getWinningMove(String handSign) {
-        return null;
+        String winning = "";
+        if(handSign.equals("rock")) {
+            winning = "paper";
+        } else if(handSign.equals("paper")) {
+            winning = "scissors";
+        } else if(handSign.equals("scissors")) {
+            winning = "rock";
+        }
+        return winning;
     }
 
     /**
@@ -21,7 +29,15 @@ public class RockPaperSissorsEvaluator {
      * @return the respective losing move
      */
     public String getLosingMove(String handSign) {
-        return null;
+        String losing = "";
+        if(handSign.equals("rock")) {
+            losing = "scissors";
+        } else if(handSign.equals("paper")) {
+            losing = "rock";
+        } else if(handSign.equals("scissors")) {
+            losing = "paper";
+        }
+        return losing;
     }
 
     /**
@@ -30,6 +46,20 @@ public class RockPaperSissorsEvaluator {
      * @return a string representative of the winning hand sign between the two players
      */
     public String getWinner(String handSignOfPlayer1, String handSignOfPlayer2) {
-        return null;
+        String winner= "";
+        if(handSignOfPlayer1.equals("rock") && handSignOfPlayer2.equals("scissor")){
+            winner = "rock";
+        } else if (handSignOfPlayer1.equals("scissors") && handSignOfPlayer2.equals("paper")) {
+            winner = "scissor";
+        } else if (handSignOfPlayer1.equals("paper") && handSignOfPlayer2.equals("rock")) {
+            winner = "paper";
+        } else if (handSignOfPlayer2.equals("rock") && handSignOfPlayer1.equals("scissor")){
+            winner = "rock";
+        } else if (handSignOfPlayer2.equals("scissors") && handSignOfPlayer1.equals("paper")) {
+            winner = "scissor";
+        } else if (handSignOfPlayer2.equals("paper") && handSignOfPlayer1.equals("rock")) {
+            winner = "paper";
+        }
+        return winner;
     }
 }
