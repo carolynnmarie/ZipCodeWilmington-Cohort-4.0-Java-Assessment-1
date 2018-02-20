@@ -62,7 +62,7 @@ public class Cat extends Pet {
 
     @Override
     public PetOwner getOwner() {
-        return super.getOwner();
+        return owner;
     }
 
     /**

@@ -1,7 +1,11 @@
 package com.zipcodewilmington.assessment1.part2;
 
 import java.sql.Array;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.TreeMap;
+
+import static java.util.Arrays.copyOf;
 
 /**
  * Created by leon on 2/16/18.
@@ -52,16 +56,21 @@ public class ArrayUtils {
      * @return the most frequently occurring object in the array
      * given an array of objects, named `objectArray` return the most frequently occuring object in the array
      */
-    public static Object getMostCommon(Object[] objectArray) {
-
-        for(int i = 0; i<objectArray.length; i++) {
-
-        }
+    public static Integer getMostCommon(Integer[] objectArray) {
 
         return null;
     }
 
 
+
+/*        protected void extractIndexValueAndAppendToOutput(Integer i){
+        Integer value = this.array[i];
+        Integer[] tempArray = new Integer[this.output.length + 1];
+        System.arraycopy(this.output, 0, tempArray, 0, this.output.length);
+        tempArray[tempArray.length -1 ] = value;
+        this.output = tempArray;
+        }
+*/
     /**
      * @param objectArray an array of any type of Object
      * @return the least frequently occurring object in the array
@@ -77,7 +86,22 @@ public class ArrayUtils {
      * @return an array containing all elements in `objectArray` and `objectArrayToAdd`
      * given two arrays `objectArray` and `objectArrayToAdd`, return an array containing all elements in `objectArray` and `objectArrayToAdd`
      */
-    public static Object[] mergeArrays(Object[] objectArray, Object[] objectArrayToAdd) {
-        return null;
-    }
+    public static Integer[] mergeArrays(Integer [] objectArray, Integer[] objectArrayToAdd) {
+        StringBuilder middle = new StringBuilder();
+        for(int i = 0; i<objectArray.length; i++) {
+            middle.append(objectArray[i])
+                    .append("/");
+        }
+        for(int j = 0; j<objectArrayToAdd.length; j++) {
+            middle.append(objectArrayToAdd[j])
+                    .append("/");
+        }
+        String[] nextStep = middle.toString().split("/");
+        Integer[] mergedArrays = new Integer [nextStep.length];
+        for(int i = 0; i<nextStep.length; i++) {
+            mergedArrays[i] = Integer.parseInt(nextStep[i]);
+        }
+        return mergedArrays;
+
+            }
 }

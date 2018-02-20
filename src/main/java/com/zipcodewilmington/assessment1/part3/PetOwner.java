@@ -1,5 +1,8 @@
 package com.zipcodewilmington.assessment1.part3;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * Created by leon on 2/16/18.
  */
@@ -8,15 +11,11 @@ public class PetOwner {
      * @param name name of the owner of the Pet
      * @param pets array of Pet object
      */
-    private String owner;
+    public String owner;
     private Pet[] pets;
 
     public PetOwner(String name, Pet... pets) {
-        this.owner = "George";
-        this.pets = pets;
-    }
-
-    public void setPets(Pet[] pets) {
+        this.owner = name;
         this.pets = pets;
     }
 
@@ -32,8 +31,9 @@ public class PetOwner {
      * @param pet pet to be added to the composite collection of Pets
      */
     public void addPet(Pet pet) {
+        getPets();
         for(int i = 0; i<pets.length; i++) {
-            if(pets[i].equals(pet)) {
+            if(pets[i] == null) {
                 pets[i] = pet;
             }
         }
@@ -57,9 +57,13 @@ public class PetOwner {
      * @return true if I own this pet
      */
     public Boolean isOwnerOf(Pet pet) {
+        for(int i = 0; i<pets.length; i++) {
+            if(pet.equals(pets[i])) {
+                return true;
+            }
+        }
 
-
-        return null;
+        return false;
     }
 
     /**
@@ -84,10 +88,12 @@ public class PetOwner {
      * @return the sum of ages of Pet objects stored in this class divided by the number of Pet object
      */
     public Float getAveragePetAge() {
+        getPets();
         float average = 0;
         for(int i = 0; i<pets.length; i++) {
             average += pets[i].age;
         }
+        average = average / pets.length;
         return average;
     }
 

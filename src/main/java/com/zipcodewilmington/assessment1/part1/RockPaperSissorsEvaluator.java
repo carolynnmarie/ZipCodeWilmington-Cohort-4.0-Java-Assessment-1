@@ -47,16 +47,16 @@ public class RockPaperSissorsEvaluator {
      */
     public String getWinner(String handSignOfPlayer1, String handSignOfPlayer2) {
         String winner= "";
-        if(handSignOfPlayer1.equals("rock") && handSignOfPlayer2.equals("scissor")){
+        if(handSignOfPlayer1.equals("rock") && handSignOfPlayer2.equals("scissors")){
             winner = "rock";
         } else if (handSignOfPlayer1.equals("scissors") && handSignOfPlayer2.equals("paper")) {
-            winner = "scissor";
+            winner = "scissors";
         } else if (handSignOfPlayer1.equals("paper") && handSignOfPlayer2.equals("rock")) {
             winner = "paper";
-        } else if (handSignOfPlayer2.equals("rock") && handSignOfPlayer1.equals("scissor")){
+        } else if (handSignOfPlayer2.equals("rock") && handSignOfPlayer1.equals("scissors")){
             winner = "rock";
         } else if (handSignOfPlayer2.equals("scissors") && handSignOfPlayer1.equals("paper")) {
-            winner = "scissor";
+            winner = "scissors";
         } else if (handSignOfPlayer2.equals("paper") && handSignOfPlayer1.equals("rock")) {
             winner = "paper";
         }
