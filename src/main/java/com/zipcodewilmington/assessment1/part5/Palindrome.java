@@ -9,12 +9,13 @@ public class Palindrome {
         Integer x = 0;
         for(int i = 0; i<input.length(); i++){
             for(int j = i; j<input.length(); j++){
-                list.add(input.substring(i,j));
+                    list.add(input.substring(i, j+1));
             }
         }
         for(String item: list){
             StringBuilder b = new StringBuilder(item);
-            if(b.equals(b.reverse())){
+            String a = b.reverse().toString();
+            if(item.equals(a)){
                 x++;
             }
         }
