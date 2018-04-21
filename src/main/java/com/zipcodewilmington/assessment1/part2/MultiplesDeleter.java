@@ -1,5 +1,9 @@
 package com.zipcodewilmington.assessment1.part2;
 
+import java.util.Arrays;
+
+import static java.lang.Integer.parseInt;
+
 /**
  * Created by leon on 2/16/18.
  */
@@ -10,22 +14,17 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with evens removed
      */
     public Integer[] deleteEvens(Integer[] ints) {
-        StringBuilder holder = new StringBuilder();
-        for(int i = 0; i<ints.length; i++) {
-            int it = ints[i];
-            if((it%2) != 0){
-                holder.append(ints[i])
-                        .append("/");
+        int x = 0;
+        Integer[] aSD = Arrays.copyOf(ints, ints.length);
+        for(Integer each: ints){
+            Integer a = each%2;
+            if(!a.equals(0)){
+                aSD[x] = each;
+                x++;
             }
         }
-        String stepTwo = holder.toString();
-        String[] stepThree = stepTwo.split("/");
-        Integer[] evenIntRemoved = new Integer [stepThree.length];
-        for(int i = 0; i<stepThree.length; i++) {
-            evenIntRemoved[i] = Integer.parseInt(stepThree[i]);
-        }
-
-        return evenIntRemoved;
+        aSD = Arrays.copyOf(aSD, aSD.length-x);
+        return aSD;
     }
 
     /**
@@ -34,22 +33,17 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with odds removed
      */
     public Integer[] deleteOdds(Integer[] ints) {
-        StringBuilder holder = new StringBuilder();
-        for(int i = 0; i<ints.length; i++) {
-            int it = ints[i];
-            if((it%2) == 0){
-                holder.append(ints[i])
-                        .append("/");
+        int x = 0;
+        Integer[] aSD = Arrays.copyOf(ints, ints.length);
+        for(Integer each: ints){
+            Integer a = each%2;
+            if(a.equals(0)){
+                aSD[x] = each;
+                x++;
             }
         }
-        String stepTwo = holder.toString();
-        String[] stepThree = stepTwo.split("/");
-        Integer[] oddIntRemoved = new Integer [stepThree.length];
-        for(int i = 0; i<stepThree.length; i++) {
-            oddIntRemoved[i] = Integer.parseInt(stepThree[i]);
-        }
-
-        return oddIntRemoved;
+        aSD = Arrays.copyOf(aSD, aSD.length-x);
+        return aSD;
 
     }
 
@@ -59,23 +53,17 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with numbers indivisible by 3 removed
      */
     public Integer[] deleteMultiplesOf3(Integer[] ints) {
-        StringBuilder holder = new StringBuilder();
-        for(int i = 0; i<ints.length; i++) {
-            int it = ints[i];
-            if((it%3) != 0){
-                holder.append(ints[i])
-                        .append("/");
+        int x = 0;
+        Integer[] aSD = Arrays.copyOf(ints, ints.length);
+        for(Integer each: ints){
+            Integer a = each%3;
+            if(!a.equals(0)){
+                aSD[x] = each;
+                x++;
             }
         }
-        String stepTwo = holder.toString();
-        String[] stepThree = stepTwo.split("/");
-        Integer[] thirdIntRemoved = new Integer [stepThree.length];
-        for(int i = 0; i<stepThree.length; i++) {
-            thirdIntRemoved[i] = Integer.parseInt(stepThree[i]);
-        }
-
-        return thirdIntRemoved;
-
+        aSD = Arrays.copyOf(aSD, aSD.length-x);
+        return aSD;
     }
 
     /**
@@ -85,21 +73,19 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with numbers indivisible by `multiple` removed
      */
     public Integer[] deleteMultiplesOfN(Integer[] ints, int multiple) {
-        StringBuilder holder = new StringBuilder();
-        for(int i = 0; i<ints.length; i++) {
-            int it = ints[i];
-            if((it%multiple) != 0){
-                holder.append(ints[i])
-                        .append("/");
+        StringBuilder builder = new StringBuilder();
+        for(Integer each: ints){
+            Integer a = each%multiple;
+            if(!a.equals(0)){
+                builder.append(each);
+                builder.append("/");
             }
         }
-        String stepTwo = holder.toString();
-        String[] stepThree = stepTwo.split("/");
-        Integer[] multipleIntRemoved = new Integer [stepThree.length];
-        for(int i = 0; i<stepThree.length; i++) {
-            multipleIntRemoved[i] = Integer.parseInt(stepThree[i]);
+        String[] answer = builder.toString().split("/");
+        Integer[] ans = new Integer[answer.length];
+        for(int i=0; i<answer.length; i++){
+            ans[i] = parseInt(answer[i]);
         }
-
-        return multipleIntRemoved;
+        return ans;
     }
 }

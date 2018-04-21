@@ -4,13 +4,15 @@ package com.zipcodewilmington.assessment1.part3;
  * Created by leon on 2/16/18.
  */
 public abstract class Pet implements Animal {
+
+    private String name;
+    private Integer age;
+    private PetOwner owner;
+
     /**
      * nullary constructor
      * by default, pet has age of 0; name of "";
      */
-    String name;
-    Integer age;
-    PetOwner owner;
 
     public Pet() {
         this.name = "";
@@ -21,7 +23,8 @@ public abstract class Pet implements Animal {
      * @param name name of this pet
      */
     public Pet(String name) {
-        this.name = "";
+        this.age = 0;
+        this.name = name;
     }
 
 
@@ -29,7 +32,8 @@ public abstract class Pet implements Animal {
      * @param age age of this pet
      */
     public Pet(int age) {
-        this.age = 0;
+        this.name = "";
+        this.age = age;
     }
 
     /**
@@ -37,8 +41,8 @@ public abstract class Pet implements Animal {
      * @param age  age of this pet
      */
     public Pet(String name, int age) {
-        this.name = "";
-        this.age = 0;
+        this.name = name;
+        this.age = age;
     }
 
     /**
@@ -60,9 +64,9 @@ public abstract class Pet implements Animal {
      *                    ensure this instance of `Pet` is added to the owner's composite `pets` list
      */
     public void setOwner(PetOwner newPetOwner) {
-        this.owner = newPetOwner;
         Pet p = new Dog();
         newPetOwner.addPet(p);
+        this.owner = newPetOwner;
     }
 
 
@@ -71,9 +75,6 @@ public abstract class Pet implements Animal {
      * @return PetOwner object whose composite `pets` collection contains this Pet instance
      */
     public PetOwner getOwner() {
-        Pet p = new Dog();
-        return this.owner;
+        return owner;
     }
 }
-
-

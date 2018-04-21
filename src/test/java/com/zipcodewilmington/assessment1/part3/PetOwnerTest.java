@@ -13,7 +13,7 @@ public class PetOwnerTest {
     @Test
     public void constructorTest() {
         // Given
-        String expectedName = "George";
+        String expectedName = "Pet owner name";
         Pet expectedPet = new Dog();
 
         // When

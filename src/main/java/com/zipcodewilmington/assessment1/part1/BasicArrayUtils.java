@@ -17,7 +17,6 @@ public class BasicArrayUtils {
      * @return the second element in the array
      */
     public static String getSecondElement(String[] stringArray) {
-
         return stringArray[1];
     }
 
@@ -26,7 +25,6 @@ public class BasicArrayUtils {
      * @return the last element in the array
      */
     public static String getLastElement(String[] stringArray) {
-
         return stringArray[stringArray.length-1];
     }
 
