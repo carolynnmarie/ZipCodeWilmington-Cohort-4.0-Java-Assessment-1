@@ -8,30 +8,33 @@ public class Dog extends Pet {
      * @param name name of this Dog
      * @param age age of this dog
      */
+
     private String name;
     private Integer age;
     private PetOwner owner;
 
     public Dog(String name, Integer age) {
-        this.name = "Name of Dog";
-        this.age = Integer.MAX_VALUE;
+        this.name = name;
+        this.age = age;
+        this.owner = null;
     }
 
     /**
      * @param age age of this dog
      */
     public Dog(Integer age) {
-        this.age = Integer.MAX_VALUE;
+        this.age = age;
         this.name = "Dog name";
+        this.owner = null;
     }
 
     /**
      * @param name name of this dog
      */
     public Dog(String name) {
-        this.name = "Name of Dog";
+        this.name = name;
         this.age = 0;
-
+        this.owner = null;
     }
 
     /**
@@ -43,6 +46,7 @@ public class Dog extends Pet {
     public Dog() {
         this.name = "Dog name";
         this.age = 0;
+        this.owner = null;
     }
 
     @Override
@@ -56,28 +60,28 @@ public class Dog extends Pet {
     }
 
     public void setAge(Integer age) {
-        this.age = Integer.MAX_VALUE;
+        this.age = age;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    @Override
+
     public void setOwner(PetOwner owner) {
         this.owner = owner;
     }
 
-    @Override
+
     public PetOwner getOwner() {
         return owner;
+
     }
 
     /**
      * @return bark as a string
      */
     public String speak() {
-
         return "Bark";
     }
 }

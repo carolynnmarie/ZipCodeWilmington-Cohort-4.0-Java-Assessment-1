@@ -13,15 +13,15 @@ public class RockPaperSissorsEvaluator {
      * @return the respective winning move
      */
     public String getWinningMove(String handSign) {
-        String winning = "";
-        if(handSign.equals("rock")) {
-            winning = "paper";
-        } else if(handSign.equals("paper")) {
-            winning = "scissors";
-        } else if(handSign.equals("scissors")) {
-            winning = "rock";
+        String x = "";
+        if(handSign.equals(ROCK)){
+            x = PAPER;
+        } else if(handSign.equals(PAPER)){
+            x = SCISSOR;
+        } else{
+            x = ROCK;
         }
-        return winning;
+        return x;
     }
 
     /**
@@ -29,15 +29,19 @@ public class RockPaperSissorsEvaluator {
      * @return the respective losing move
      */
     public String getLosingMove(String handSign) {
-        String losing = "";
-        if(handSign.equals("rock")) {
-            losing = "scissors";
-        } else if(handSign.equals("paper")) {
-            losing = "rock";
-        } else if(handSign.equals("scissors")) {
-            losing = "paper";
+        String x = "";
+        switch(handSign){
+            case ROCK:
+                x = SCISSOR;
+                break;
+            case PAPER:
+                x = ROCK;
+                break;
+            case SCISSOR:
+                x = PAPER;
+                break;
         }
-        return losing;
+        return x;
     }
 
     /**
@@ -46,20 +50,12 @@ public class RockPaperSissorsEvaluator {
      * @return a string representative of the winning hand sign between the two players
      */
     public String getWinner(String handSignOfPlayer1, String handSignOfPlayer2) {
-        String winner= "";
-        if(handSignOfPlayer1.equals("rock") && handSignOfPlayer2.equals("scissors")){
-            winner = "rock";
-        } else if (handSignOfPlayer1.equals("scissors") && handSignOfPlayer2.equals("paper")) {
-            winner = "scissors";
-        } else if (handSignOfPlayer1.equals("paper") && handSignOfPlayer2.equals("rock")) {
-            winner = "paper";
-        } else if (handSignOfPlayer2.equals("rock") && handSignOfPlayer1.equals("scissors")){
-            winner = "rock";
-        } else if (handSignOfPlayer2.equals("scissors") && handSignOfPlayer1.equals("paper")) {
-            winner = "scissors";
-        } else if (handSignOfPlayer2.equals("paper") && handSignOfPlayer1.equals("rock")) {
-            winner = "paper";
+        String x = "";
+        if (getWinningMove(handSignOfPlayer1).equalsIgnoreCase(handSignOfPlayer2)) {
+            x = handSignOfPlayer2;
+        } else {
+            x = handSignOfPlayer1;
         }
-        return winner;
+        return x;
     }
 }

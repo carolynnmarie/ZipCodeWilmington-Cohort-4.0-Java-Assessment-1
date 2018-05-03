@@ -1,9 +1,7 @@
 package com.zipcodewilmington.assessment1.part2;
 
 import java.sql.Array;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 import static java.util.Arrays.copyOf;
 
@@ -17,7 +15,7 @@ public class ArrayUtils {
      * @return the number of times the specified `value` occurs in the specified `objectArray`
      * Given an array of objects, named `objectArray`, and an object `objectToCount`, return the number of times the `objectToCount` appears in the `objectArray`
      */
-    public static Integer getNumberOfOccurrences(Object[] objectArray, Object objectToCount) {
+    public static Integer getNumberOfOccurrences(Integer[] objectArray, Integer objectToCount) {
         Integer counter = 0;
         for(int i = 0; i< objectArray.length; i++) {
             if(objectArray[i].equals(objectToCount))
@@ -32,53 +30,47 @@ public class ArrayUtils {
      * @return an array with identical content excluding the specified `objectToRemove`
      * Given an array of objects, name `objectArray`, and an object `objectToRemove`, return an array of objects with identical contents excluding `objectToRemove`
      */
-    public static Object[] removeValue(Object[] objectArray, Object objectToRemove) {
-        Object [] output = {};
-        StringBuilder removeObject = new StringBuilder();
-        for(int i = 0; i<objectArray.length; i++) {
-            if (!objectArray[i].equals(objectToRemove)) {
-                removeObject.append(objectArray[i])
-                        .append("/");
+    public static Integer[] removeValue(Integer[] objectArray, Integer objectToRemove) {
+        ArrayList<Integer> removed = new ArrayList<>();
+        for(Integer item: objectArray){
+            if(!item.equals(objectToRemove)){
+                removed.add(item);
             }
         }
-        String remove = removeObject.toString();
-        String[] removedValues = remove.split("/");
-
-        Integer[] exactIntRemoved = new Integer [removedValues.length];
-        for(int i = 0; i<removedValues.length; i++) {
-            exactIntRemoved[i] = Integer.parseInt(removedValues[i]);
-        }
-        return exactIntRemoved;
+        Integer[] array = removed.toArray(new Integer[objectArray.length - getNumberOfOccurrences(objectArray, objectToRemove)]);
+        return array;
     }
 
     /**
      * @param objectArray an array of any type of Object
      * @return the most frequently occurring object in the array
-     * given an array of objects, named `objectArray` return the most frequently occuring object in the array
+     * given an array of objects, named `objectArray` return the most frequently occurring object in the array
      */
     public static Integer getMostCommon(Integer[] objectArray) {
-
-        return null;
+        Integer most = 0;
+        for(Integer item: objectArray){
+            if(getNumberOfOccurrences(objectArray, item)>most){
+                most = item;
+            }
+        }
+        return most;
     }
 
-
-
-/*        protected void extractIndexValueAndAppendToOutput(Integer i){
-        Integer value = this.array[i];
-        Integer[] tempArray = new Integer[this.output.length + 1];
-        System.arraycopy(this.output, 0, tempArray, 0, this.output.length);
-        tempArray[tempArray.length -1 ] = value;
-        this.output = tempArray;
-        }
-*/
     /**
      * @param objectArray an array of any type of Object
      * @return the least frequently occurring object in the array
      * given an array of objects, named `objectArray` return the least frequently occuring object in the array
      */
-    public static Object getLeastCommon(Object[] objectArray) {
-        return null;
+    public static Integer getLeastCommon(Integer[] objectArray) {
+        Integer least = getNumberOfOccurrences(objectArray, objectArray[0]);
+        for(Integer item: objectArray){
+            if(getNumberOfOccurrences(objectArray, item)<least){
+                least = item;
+            }
+        }
+        return least;
     }
+
 
     /**
      * @param objectArray      an array of any type of Object
@@ -87,21 +79,12 @@ public class ArrayUtils {
      * given two arrays `objectArray` and `objectArrayToAdd`, return an array containing all elements in `objectArray` and `objectArrayToAdd`
      */
     public static Integer[] mergeArrays(Integer [] objectArray, Integer[] objectArrayToAdd) {
-        StringBuilder middle = new StringBuilder();
-        for(int i = 0; i<objectArray.length; i++) {
-            middle.append(objectArray[i])
-                    .append("/");
+        Integer[] merged = Arrays.copyOf(objectArray, objectArray.length + objectArrayToAdd.length);
+        int x = 0;
+        for(int i = objectArray.length; i < merged.length; i++){
+            merged[i] = objectArrayToAdd[x];
+            x++;
         }
-        for(int j = 0; j<objectArrayToAdd.length; j++) {
-            middle.append(objectArrayToAdd[j])
-                    .append("/");
-        }
-        String[] nextStep = middle.toString().split("/");
-        Integer[] mergedArrays = new Integer [nextStep.length];
-        for(int i = 0; i<nextStep.length; i++) {
-            mergedArrays[i] = Integer.parseInt(nextStep[i]);
-        }
-        return mergedArrays;
-
-            }
+        return merged;
+    }
 }

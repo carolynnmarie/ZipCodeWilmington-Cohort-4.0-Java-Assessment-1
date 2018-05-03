@@ -13,7 +13,7 @@ public class PetOwnerTest {
     @Test
     public void constructorTest() {
         // Given
-        String expectedName = "George";
+        String expectedName = "Pet owner name";
         Pet expectedPet = new Dog();
 
         // When
@@ -95,7 +95,7 @@ public class PetOwnerTest {
         PetOwner po = new PetOwner("", oneYearOldPuppy, twoYearOldKitten);
 
         // When
-        int actual = po.getYoungetPetAge();
+        int actual = po.getYoungestPetAge();
 
         // Then
         Assert.assertEquals(expected, actual);

@@ -8,8 +8,8 @@ public class PalindromeTest {
     @Test
     public void solution0(){
         Palindrome palindrome = new Palindrome();
-        Integer expected = palindrome.countPalindromes("aaa");
-        Integer actual = 6;
+        Integer actual = palindrome.countPalindromes("aaa");
+        Integer expected = 6;
         Assert.assertEquals(expected, actual);
 
     }
@@ -18,8 +18,8 @@ public class PalindromeTest {
     public void solution1(){
         // Should assert to true
         Palindrome palindrome = new Palindrome();
-        Integer expected = palindrome.countPalindromes("abccba");
-        Integer actual = 9;
+        Integer actual = palindrome.countPalindromes("abccba");
+        Integer expected = 9;
         Assert.assertEquals(expected, actual);
 
     }
@@ -28,8 +28,8 @@ public class PalindromeTest {
     public void solution2(){
         // Should assert to true
         Palindrome palindrome = new Palindrome();
-        Integer expected = palindrome.countPalindromes("daata");
-        Integer actual = 7;
+        Integer actual = palindrome.countPalindromes("daata");
+        Integer expected = 7;
         Assert.assertEquals(expected, actual);
 
     }
@@ -38,8 +38,8 @@ public class PalindromeTest {
     public void solution3(){
         // Should assert to true
         Palindrome palindrome = new Palindrome();
-        Integer expected = palindrome.countPalindromes("lrfkqyuqfj");
-        Integer actual = 10;
+        Integer actual = palindrome.countPalindromes("lrfkqyuqfj");
+        Integer expected = 10;
         Assert.assertEquals(expected, actual);
 
     }
@@ -48,8 +48,8 @@ public class PalindromeTest {
     public void solution4(){
         // Should assert to true
         Palindrome palindrome = new Palindrome();
-        Integer expected = palindrome.countPalindromes("kxyqvnrtys");
-        Integer actual = 10;
+        Integer actual = palindrome.countPalindromes("kxyqvnrtys");
+        Integer expected = 10;
         Assert.assertEquals(expected, actual);
 
     }
@@ -58,8 +58,8 @@ public class PalindromeTest {
     public void solution5(){
         // Should assert to true
         Palindrome palindrome = new Palindrome();
-        Integer expected = palindrome.countPalindromes("ltvzkqtpvolphckcyufdqmlglimklfzktgygdttnhcvpfdfbrpzlkvshwywshtdgmbqbkkxcvgumonmwvytbytnuqhmfjaqtgngcwkuzyamnerphfmwevhwlezohyeehbrcewjxvceziftiqtntfsrptugtiznorvonzjfeacgamayapwlmbzitzszhzkosvnknberbltlkggdgpljfisyltmmfvhybljvkypcflsaqevcijcyrgmqirzniaxakholawoydvchveigttxwpukzjfhxbrtspfttotafsngqvoijxuvqbztvaalsehzxbshnrvbykjqlrzzfmlvyoshiktodnsjjpqplciklzqrxloqxrudygjtyzleizmeainxslwhhjwslqendjvxjyghrveuvphknqtsdtwxcktmwwwsdthzmlmbhjkmouhpbqurqfxgqlojmwsomowsjvpvhznbsilhhdkbdxqgrgedpzchrgefeukmcowoeznwhpiiduxdnnlbnmyjyssbsococdzcuunkrfduvouaghhcyvmlkzaajpfpyljtyjjpyntsefxiswjutenuycpbcnmhfuqmmidmvknyxmywegmtunodvuzygvguxtrdsdfzfssmeluodjgdgzfmrazvndtaurdkugsbdpawxitivdubbqeonycaegxfjkklrfkraoheucsvpiteqrswgkaaaohxxzhqjtkqaqhkwberbpmglbjipnujywogwczlkyrdejaqufowbigrsnjniegvdvotugocedktcbbufnxorixibbdfrzuqsyrfqghoyqevcuanuujszitaoaowsxyglafbwzddoznrvjqeyqignpitruijvyllsibobjltusrypanvybsfrxtlfmpdidtyozoolzslgdgowijatklvjzscizrkupmsoxftumyxifyunxucubvkfctkqlroqgzjvjwzizppvsomflvioemycnp");
-        Integer actual = 1084;
+        Integer actual = palindrome.countPalindromes("ltvzkqtpvolphckcyufdqmlglimklfzktgygdttnhcvpfdfbrpzlkvshwywshtdgmbqbkkxcvgumonmwvytbytnuqhmfjaqtgngcwkuzyamnerphfmwevhwlezohyeehbrcewjxvceziftiqtntfsrptugtiznorvonzjfeacgamayapwlmbzitzszhzkosvnknberbltlkggdgpljfisyltmmfvhybljvkypcflsaqevcijcyrgmqirzniaxakholawoydvchveigttxwpukzjfhxbrtspfttotafsngqvoijxuvqbztvaalsehzxbshnrvbykjqlrzzfmlvyoshiktodnsjjpqplciklzqrxloqxrudygjtyzleizmeainxslwhhjwslqendjvxjyghrveuvphknqtsdtwxcktmwwwsdthzmlmbhjkmouhpbqurqfxgqlojmwsomowsjvpvhznbsilhhdkbdxqgrgedpzchrgefeukmcowoeznwhpiiduxdnnlbnmyjyssbsococdzcuunkrfduvouaghhcyvmlkzaajpfpyljtyjjpyntsefxiswjutenuycpbcnmhfuqmmidmvknyxmywegmtunodvuzygvguxtrdsdfzfssmeluodjgdgzfmrazvndtaurdkugsbdpawxitivdubbqeonycaegxfjkklrfkraoheucsvpiteqrswgkaaaohxxzhqjtkqaqhkwberbpmglbjipnujywogwczlkyrdejaqufowbigrsnjniegvdvotugocedktcbbufnxorixibbdfrzuqsyrfqghoyqevcuanuujszitaoaowsxyglafbwzddoznrvjqeyqignpitruijvyllsibobjltusrypanvybsfrxtlfmpdidtyozoolzslgdgowijatklvjzscizrkupmsoxftumyxifyunxucubvkfctkqlroqgzjvjwzizppvsomflvioemycnp");
+        Integer expected = 1084;
         Assert.assertEquals(expected, actual);
 
     }
