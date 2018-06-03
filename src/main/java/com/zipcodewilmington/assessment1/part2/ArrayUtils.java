@@ -31,14 +31,25 @@ public class ArrayUtils {
      * Given an array of objects, name `objectArray`, and an object `objectToRemove`, return an array of objects with identical contents excluding `objectToRemove`
      */
     public static Integer[] removeValue(Integer[] objectArray, Integer objectToRemove) {
-        ArrayList<Integer> removed = new ArrayList<>();
+//option 1
+        int x = getNumberOfOccurrences(objectArray, objectToRemove);
+        Integer[] intArray = new Integer[objectArray.length-x];
+        int count = 0;
         for(Integer item: objectArray){
             if(!item.equals(objectToRemove)){
-                removed.add(item);
+                intArray[count] = item;
+                count++;
             }
         }
-        Integer[] array = removed.toArray(new Integer[objectArray.length - getNumberOfOccurrences(objectArray, objectToRemove)]);
-        return array;
+//option2
+//        ArrayList<Integer> removed = new ArrayList<>();
+//        for(Integer item: objectArray){
+//            if(!item.equals(objectToRemove)){
+//                removed.add(item);
+//            }
+//        }
+//        Integer[] intArray = removed.toArray(new Integer[objectArray.length - getNumberOfOccurrences(objectArray, objectToRemove)]);
+        return intArray;
     }
 
     /**
@@ -62,10 +73,12 @@ public class ArrayUtils {
      * given an array of objects, named `objectArray` return the least frequently occuring object in the array
      */
     public static Integer getLeastCommon(Integer[] objectArray) {
-        Integer least = getNumberOfOccurrences(objectArray, objectArray[0]);
+        Integer x = objectArray.length+1;
+        Integer least = 0;
         for(Integer item: objectArray){
-            if(getNumberOfOccurrences(objectArray, item)<least){
+            if(getNumberOfOccurrences(objectArray, item)<x){
                 least = item;
+                x = getNumberOfOccurrences(objectArray, item);
             }
         }
         return least;

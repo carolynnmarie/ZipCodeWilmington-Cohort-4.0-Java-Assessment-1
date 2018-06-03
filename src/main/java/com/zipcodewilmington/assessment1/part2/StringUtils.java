@@ -59,14 +59,21 @@ public class StringUtils {
      */
     public static String removeCharacterAtIndex(String str, int index) {
         String x = "";
-        for(int i = 0; i<str.length(); i++) {
-            if ((i != index) && (i != (str.length()-1))) {
-                x += str.substring(i, (i+1));
-            } else if ((i != index) && (i == (str.length()-1))){
-                x += str.substring(i);
+        for(int i = 0; i<str.length(); i++){
+            if(i !=index){
+                x+= str.charAt(i);
             }
         }
         return x;
+//        String x = "";
+//        for(int i = 0; i<str.length(); i++) {
+//            if ((i != index) && (i != (str.length()-1))) {
+//                x += str.substring(i, (i+1));
+//            } else if ((i != index) && (i == (str.length()-1))){
+//                x += str.substring(i);
+//            }
+//        }
+//        return x;
     }
 
 }

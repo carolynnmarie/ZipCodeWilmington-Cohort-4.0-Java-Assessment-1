@@ -18,10 +18,21 @@ public class BasicStringUtils {
      * @param str string input from client
      * @return string with identical contents, in the reverse order
      */
-    public static String reverse(String str) {
-        StringBuilder builder = new StringBuilder(str);
-         return builder.reverse().toString();
+//    public static String reverse(String str) {
+//        StringBuilder builder = new StringBuilder(str);
+//         return builder.reverse().toString();
+//    }
 
+    public static String reverse(String str){
+        String strNew = "";
+        for(int i = str.length()-1; i>=0; i--){
+            if(i == str.length()-1){
+                strNew += str.substring(i);
+            } else {
+                strNew += str.substring(i,i+1);
+            }
+        }
+        return strNew;
     }
 
     /**
@@ -55,8 +66,7 @@ public class BasicStringUtils {
             Character x = str.charAt(i);
             if(isLowerCase(str.charAt(i))){
                 x = toUpperCase(str.charAt(i));
-            }
-            if(isUpperCase(str.charAt(i))){
+            }else {
                 x = toLowerCase(str.charAt(i));
             }
             reason += x.toString();

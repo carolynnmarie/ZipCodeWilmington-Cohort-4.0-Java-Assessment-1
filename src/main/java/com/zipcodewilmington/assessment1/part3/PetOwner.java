@@ -21,7 +21,6 @@ public class PetOwner {
         if(this.pets == null){
             this.pets = new Pet[0];
         } else {
-            this.pets = pets2;
             for(Pet each: this.pets){
                 each.owner = this;
             }
@@ -29,6 +28,7 @@ public class PetOwner {
     }
 
     public void setOwner(String owner) {
+        this.pets = new Pet[]{};
         this.owner = owner;
     }
 
@@ -40,8 +40,9 @@ public class PetOwner {
      * @param pet pet to be added to the composite collection of Pets
      */
     public void addPet(Pet pet) {
-        pets = Arrays.copyOf(pets, pets.length+1);
-        pets[pets.length-1] = pet;
+        pets = Arrays.copyOf(pets, pets.length + 1);
+        pets[pets.length - 1] = pet;
+
     }
 
 

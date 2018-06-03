@@ -10,14 +10,11 @@ public class Jumper {
 
         if (k < j) {
             jumping = k;
-        }
-        if (k == j) {
+        }else if (k == j) {
             jumping = 1;
-        }
-        if ((k > j)){
+        }else {
             jumping = (k / j) + k%j;
         }
-
         return jumping;
     }
 }

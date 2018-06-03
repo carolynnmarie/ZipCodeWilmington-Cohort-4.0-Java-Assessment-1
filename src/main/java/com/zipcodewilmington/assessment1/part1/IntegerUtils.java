@@ -14,13 +14,11 @@ public class IntegerUtils {
      * @return the sum of all integers between 0 and not including `n`
      */
     public static Integer getSumOfN(Integer n) {
-        int x =1;
-        int y = 0;
-        while(x<n){
-            y = y + x;
-            x++;
+        int x = 0;
+        for(int i = 0; i<n; i++){
+            x+=i;
         }
-        return y;
+        return x;
     }
 
     /**
@@ -28,15 +26,11 @@ public class IntegerUtils {
      * @return the product of all integers between 0 and including `n`
      */
     public static Integer getProductOfN(Integer n) {
-        int x =1;
-        int y = 1;
-        while(x<= n){
-            y = y * x;
-            x++;
+        int x = 1;
+        for(int i = 1; i<=n; i++){
+            x*=i;
         }
-        return y;
-
-
+        return x;
     }
 
     /**
