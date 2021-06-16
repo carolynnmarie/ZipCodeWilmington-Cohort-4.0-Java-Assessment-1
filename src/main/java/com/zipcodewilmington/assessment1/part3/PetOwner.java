@@ -28,7 +28,6 @@ public class PetOwner {
     }
 
     public void setOwner(String owner) {
-        this.pets = new Pet[]{};
         this.owner = owner;
     }
 
@@ -125,7 +124,7 @@ public class PetOwner {
     }
 
     /**
-     * @return the name property of the Pet
+     * @return the name property of the owner of the Pet
      */
     public String getName() {
         return this.owner;

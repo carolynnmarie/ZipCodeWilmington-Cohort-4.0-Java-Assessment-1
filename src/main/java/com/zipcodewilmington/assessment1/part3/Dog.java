@@ -9,14 +9,9 @@ public class Dog extends Pet {
      * @param age age of this dog
      */
 
-    private String name;
-    private Integer age;
-    private PetOwner owner;
-
     public Dog(String name, Integer age) {
         this.name = name;
         this.age = age;
-        this.owner = super.owner;
     }
 
     /**
@@ -25,7 +20,6 @@ public class Dog extends Pet {
     public Dog(Integer age) {
         this.age = age;
         this.name = "Dog name";
-        this.owner = super.owner;
     }
 
     /**
@@ -34,7 +28,6 @@ public class Dog extends Pet {
     public Dog(String name) {
         this.name = name;
         this.age = 0;
-        this.owner = super.owner;
     }
 
     /**
@@ -46,7 +39,6 @@ public class Dog extends Pet {
     public Dog() {
         this.name = "Dog name";
         this.age = 0;
-        this.owner = super.owner;
     }
 
     @Override
@@ -69,7 +61,6 @@ public class Dog extends Pet {
 
 
     public void setOwner(PetOwner owner) {
-        owner.addPet(new Dog(this.name, this.age));
         this.owner = owner;
     }
 

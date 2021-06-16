@@ -46,8 +46,7 @@ public class StringUtils {
         String[] a = sentence.split(" ");
         StringBuilder builder = new StringBuilder(a[0]);
         String sub1 = builder.reverse().substring(0,1).toUpperCase();
-        String sub2 = builder.substring(1);
-        return sub1 + sub2;
+        return sub1 + builder.substring(1);
     }
 
 
@@ -65,15 +64,6 @@ public class StringUtils {
             }
         }
         return x;
-//        String x = "";
-//        for(int i = 0; i<str.length(); i++) {
-//            if ((i != index) && (i != (str.length()-1))) {
-//                x += str.substring(i, (i+1));
-//            } else if ((i != index) && (i == (str.length()-1))){
-//                x += str.substring(i);
-//            }
-//        }
-//        return x;
     }
 
 }

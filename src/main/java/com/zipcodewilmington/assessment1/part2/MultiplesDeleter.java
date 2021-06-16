@@ -1,5 +1,6 @@
 package com.zipcodewilmington.assessment1.part2;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import static java.lang.Integer.parseInt;
@@ -73,19 +74,12 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with numbers indivisible by `multiple` removed
      */
     public Integer[] deleteMultiplesOfN(Integer[] ints, int multiple) {
-        StringBuilder builder = new StringBuilder();
-        for(Integer each: ints){
-            Integer a = each%multiple;
-            if(!a.equals(0)){
-                builder.append(each);
-                builder.append("/");
+        ArrayList<Integer> list = new ArrayList<>();
+        for(Integer item: ints){
+            if(item%multiple != 0){
+                list.add(item);
             }
         }
-        String[] answer = builder.toString().split("/");
-        Integer[] ans = new Integer[answer.length];
-        for(int i=0; i<answer.length; i++){
-            ans[i] = parseInt(answer[i]);
-        }
-        return ans;
+        return Arrays.copyOf(list.toArray(ints), list.size());
     }
 }

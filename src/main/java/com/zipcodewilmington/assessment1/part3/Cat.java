@@ -9,9 +9,6 @@ public class Cat extends Pet {
      * @param age age of this Cat
      */
 
-    private String name;
-    private Integer age;
-    private PetOwner owner;
 
     public Cat(String name, Integer age) {
         this.name = name;

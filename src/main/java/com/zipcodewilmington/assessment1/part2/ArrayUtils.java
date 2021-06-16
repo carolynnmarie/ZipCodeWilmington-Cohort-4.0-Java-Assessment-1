@@ -59,12 +59,14 @@ public class ArrayUtils {
      */
     public static Integer getMostCommon(Integer[] objectArray) {
         Integer most = 0;
+        Integer id = 0;
         for(Integer item: objectArray){
             if(getNumberOfOccurrences(objectArray, item)>most){
-                most = item;
+                most = getNumberOfOccurrences(objectArray, item);
+                id = item;
             }
         }
-        return most;
+        return id;
     }
 
     /**
